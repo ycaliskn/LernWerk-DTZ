@@ -1,7 +1,7 @@
 # LernWerk A1 test report — 25 November 2026
 
 ## Scope
-The current source snapshot contains 58 A1 vocabulary cards, 25 A1 verb cards and 20 A1 grammar exercises. This is a curated A1 test pack, not the complete Goethe A1 catalogue. Goethe's official word list defines a broader scope of roughly 650 words. Protected source text and example sentences are not copied wholesale. A1 grammar is cross-checked against the public 12-lesson VHS-Lernportal overview.
+The original A1 baseline contained 58 vocabulary cards, 25 verbs and 20 grammar exercises. Revision 0.3 extends the catalogue with A2/B1 samples; see the revision section below. The A1 pack remains curated, not the complete Goethe A1 catalogue. Goethe's official word list defines a broader scope of roughly 650 words. Protected source text and example sentences are not copied wholesale. A1 grammar is cross-checked against the public 12-lesson VHS-Lernportal overview.
 
 ## Three-run automated verification
 
@@ -58,14 +58,14 @@ for f in app/app.js app/core.js app/content.js app/i18n.js app/sources.js; do no
 The current revision adds:
 - 64 vocabulary cards (58 A1 + 3 A2 + 3 B1).
 - 31 verb cards (25 A1 + 3 A2 + 3 B1).
-- 26 grammar cards (20 A1 + 3 A2 + 3 B1).
+- 28 grammar cards (20 A1 + 3 A2 + 5 B1).
 - 15 independent gap-fill questions (5 per level), each with a new sentence rather than reusing the explanation-card example.
 - Original SVG illustrations generated locally for every vocabulary, verb and grammar card; no external image request or emoji-only card placeholder is required.
 - A separate fill-in-the-blank route in Study Modes. Practice answers are associated with the corresponding learning card for mistake review.
 - Native Android speech via `@capacitor-community/text-to-speech` 8.0.2. The previous implementation relied only on Web Speech API; Android WebView does not expose `speechSynthesis` consistently. The native plugin uses Android TextToSpeech and checks whether a German voice is installed before speaking.
 
 ### Revision 0.3 verification
-- Node.js suite: 30 tests per run × 3 independent runs = 90 successful test executions.
+- Node.js suite: 31 tests per run × 3 independent runs = 93 successful test executions.
 - Java learning-rule self-test: 3 independent runs passed.
 - JavaScript syntax checks: app entry, content, core, i18n, sources and illustration modules passed.
 - Content audit: all learning examples have sentence text, clean punctuation, unique IDs and valid answer indices; all 15 practice prompts are distinct from learning examples.
