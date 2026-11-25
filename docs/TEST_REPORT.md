@@ -51,3 +51,22 @@ npm run test:3x
 for i in 1 2 3; do npm run api:test; done
 for f in app/app.js app/core.js app/content.js app/i18n.js app/sources.js; do node --check "$f"; done
 ```
+
+
+## Revision 0.3 — illustrated cards, practice mode and audio repair
+
+The current revision adds:
+- 64 vocabulary cards (58 A1 + 3 A2 + 3 B1).
+- 31 verb cards (25 A1 + 3 A2 + 3 B1).
+- 26 grammar cards (20 A1 + 3 A2 + 3 B1).
+- 15 independent gap-fill questions (5 per level), each with a new sentence rather than reusing the explanation-card example.
+- Original SVG illustrations generated locally for every vocabulary, verb and grammar card; no external image request or emoji-only card placeholder is required.
+- A separate fill-in-the-blank route in Study Modes. Practice answers are associated with the corresponding learning card for mistake review.
+- Native Android speech via `@capacitor-community/text-to-speech` 8.0.2. The previous implementation relied only on Web Speech API; Android WebView does not expose `speechSynthesis` consistently. The native plugin uses Android TextToSpeech and checks whether a German voice is installed before speaking.
+
+### Revision 0.3 verification
+- Node.js suite: 30 tests per run × 3 independent runs = 90 successful test executions.
+- Java learning-rule self-test: 3 independent runs passed.
+- JavaScript syntax checks: app entry, content, core, i18n, sources and illustration modules passed.
+- Content audit: all learning examples have sentence text, clean punctuation, unique IDs and valid answer indices; all 15 practice prompts are distinct from learning examples.
+- CI build must confirm the esbuild bundle and Android APK after the native TTS dependency is installed. A physical-device voice playback test is still required; build success alone does not prove that the device has a German TTS voice installed.
