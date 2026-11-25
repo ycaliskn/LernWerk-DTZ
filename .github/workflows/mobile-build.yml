@@ -79,7 +79,7 @@ jobs:
       - name: Build for iOS Simulator
         run: |
           xcodebuild \
-            -workspace ios/App/App.xcworkspace \
+            -project ios/App/App.xcodeproj \
             -scheme App \
             -sdk iphonesimulator \
             -configuration Debug \
@@ -145,7 +145,7 @@ jobs:
           test -n "$APPLE_API_ISSUER_ID"
           test -n "$APPLE_TEAM_ID"
           xcodebuild \
-            -workspace ios/App/App.xcworkspace \
+            -project ios/App/App.xcodeproj \
             -scheme App \
             -configuration Release \
             -destination 'generic/platform=iOS' \
