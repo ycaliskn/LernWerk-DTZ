@@ -385,13 +385,37 @@ function exitStudy() {
   saveState(); renderHome();
 }
 
-function speak(text) {
-  if (!('speechSynthesis' in window)) return showToast('Bu cihazda sesli okuma desteklenmiyor.');
-  window.speechSynthesis.cancel();
-  const utterance = new SpeechSynthesisUtterance(text);
-  utterance.lang = 'de-DE';
-  utterance.rate = 0.88;
-  window.speechSynthesis.speak(utterance);
+async function speak(text) {
+  const phrase = String(text || '').trim();
+  if (!phrase) return;
+  try {
+    if (Capacitor.isNativePlatform()) {
+      await TextToSpeech.stop().catch(() => {});
+      const { supported } = await TextToSpeech.isLanguageSupported({ lang: 'de-DE' });
+      if (!supported) {
+        if (Capacitor.getPlatform() === 'android') await TextToSpeech.openInstall().catch(() => {});
+        showToast('Cihazda Almanca ses paketi bulunamadı. Android Ayarlar > Metin okuma çıkışından Almanca ses yükleyin.');
+        return;
+      }
+      await TextToSpeech.speak({ text: phrase, lang: 'de-DE', rate: 0.82, pitch: 1, volume: 1, queueStrategy: 0 });
+      return;
+    }
+    if (typeof window.speechSynthesis === 'undefined' || typeof window.SpeechSynthesisUtterance === 'undefined') {
+      showToast('Bu tarayıcı sesli okumayı desteklemiyor. Android uygulamasında yerel ses motoru kullanılır.');
+      return;
+    }
+    window.speechSynthesis.cancel();
+    const utterance = new window.SpeechSynthesisUtterance(phrase);
+    utterance.lang = 'de-DE';
+    utterance.rate = 0.88;
+    const germanVoice = window.speechSynthesis.getVoices().find(voice => /^de(-|_)/i.test(voice.lang));
+    if (germanVoice) utterance.voice = germanVoice;
+    utterance.onerror = event => showToast(`Seslendirme hatası: ${event.error || 'bilinmeyen hata'}`);
+    window.speechSynthesis.speak(utterance);
+  } catch (error) {
+    console.error('LernWerk TTS error', error);
+    showToast(`Seslendirme başlatılamadı: ${error?.message || 'TTS motorunu kontrol edin.'}`);
+  }
 }
 
 function renderSettings() {
