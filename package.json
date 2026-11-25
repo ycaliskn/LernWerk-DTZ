@@ -1,0 +1,19 @@
+{
+  "name": "lernwerk-dtz",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Offline-first DTZ A1-B1 German learning app prototype for Android and iOS via Capacitor.",
+  "scripts": {
+    "start": "python3 -m http.server 4173 -d app",
+    "test": "npm --prefix app test",
+    "test:3x": "npm --prefix app run test:3x",
+    "api:compile": "mkdir -p api-java/build && javac --add-modules jdk.httpserver -d api-java/build $(find api-java/src/main/java -name '*.java')",
+    "api:test": "mkdir -p api-java/build && javac --add-modules jdk.httpserver -d api-java/build $(find api-java/src/main/java api-java/src/test/java -name '*.java') && java -ea -cp api-java/build de.lernwerk.dtz.LearningRulesSelfTest",
+    "api:run": "npm run api:compile && java --add-modules jdk.httpserver -cp api-java/build de.lernwerk.dtz.DtzApiServer",
+    "cap:add:android": "npx cap add android",
+    "cap:add:ios": "npx cap add ios",
+    "cap:sync": "npx cap sync"
+  },
+  "devDependencies": { "@capacitor/cli": "8.6.2" },
+  "dependencies": { "@capacitor/android": "8.6.2", "@capacitor/core": "8.6.2", "@capacitor/ios": "8.6.2" }
+}
