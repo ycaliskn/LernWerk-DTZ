@@ -327,7 +327,8 @@ async function checkAnswer() {
   const isCorrect = selectedAnswer === item.answer;
   const sessionId = activeSession.id;
   const now = Date.now();
-  state.progress = recordAnswer(state.progress, item.id, isCorrect, sessionId, now);
+  const trackedItemId = item.type === 'practice' ? (item.targetItemId || item.id) : item.id;
+  state.progress = recordAnswer(state.progress, trackedItemId, isCorrect, sessionId, now);
   state.progress.totalAnswers = (state.progress.totalAnswers || 0) + 1;
   if (isCorrect) state.progress.correctAnswers = (state.progress.correctAnswers || 0) + 1;
   activeSession.itemIndex += 1;
@@ -341,8 +342,8 @@ async function checkAnswer() {
     if (i === item.answer) button.classList.add('correct');
     if (i === selectedAnswer && !isCorrect) button.classList.add('wrong');
   });
-  const exp = item.type === 'grammar' ? grammarExplanation(item) : `${meaning(item)}${sentenceMeaning(item) ? ` — ${sentenceMeaning(item)}` : ''}`;
-  const reviewRecord = state.progress.mistakes[item.id];
+  const exp = item.type === 'practice' ? (state.settings.language === 'en' ? item.explanationEn : item.explanation) : item.type === 'grammar' ? grammarExplanation(item) : `${meaning(item)}${sentenceMeaning(item) ? ` — ${sentenceMeaning(item)}` : ''}`;
+  const reviewRecord = state.progress.mistakes[trackedItemId];
   const reviewNote = isCorrect && reviewRecord?.lastReviewedAt === now && reviewRecord.correctSessions.length < 3 ? '' : ''; // review spacing is tracked in local progress
   const feedback = document.querySelector('#feedback');
   feedback.className = `feedback ${isCorrect ? 'good' : 'bad'}`;
