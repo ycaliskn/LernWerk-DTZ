@@ -268,12 +268,14 @@ function renderStudy() {
   selectedAnswer = null; answered = false; currentFeedback = null;
   const item = currentItem;
   const pct = Math.round(index / currentItems.length * 100);
-  const prompt = item.type === 'grammar' ? item.quiz : (state.settings.language === 'en' ? 'Choose the correct meaning' : 'Doğru anlamı seçin');
-  const options = item.type === 'grammar' ? item.options : (item.options?.[state.settings.language] || item.options?.tr || []);
+  const isPractice = item.type === 'practice';
+  const prompt = isPractice ? (state.settings.language === 'en' ? 'Complete the sentence with the correct form' : 'Cümledeki boşluğu doğru biçimle tamamlayın') : item.type === 'grammar' ? item.quiz : (state.settings.language === 'en' ? 'Choose the correct meaning' : 'Doğru anlamı seçin');
+  const options = isPractice ? (item.options?.[state.settings.language] || item.options?.tr || []) : item.type === 'grammar' ? item.options : (item.options?.[state.settings.language] || item.options?.tr || []);
   const target = item.infinitive || item.title || item.target;
   const sentence = item.sentence || item.example || '';
-  const image = item.visual || (item.type === 'grammar' ? '📐' : '📝');
-  const title = item.type === 'grammar' ? grammarTitle(item) : target;
+  const title = isPractice ? item.title : item.type === 'grammar' ? grammarTitle(item) : target;
+  const art = illustrationDataUri(item);
+  const artAlt = illustrationAlt(item);
   main.innerHTML = `
     <div class="page-heading"><div><div class="eyebrow">${esc(item.level)} · ${esc(item.topic || (item.type === 'grammar' ? 'Gramer' : item.type === 'verb' ? 'Fiil' : 'Kelime'))}</div><h1>${esc(routeTitle(route))}</h1><p>${state.settings.language === 'en' ? 'Choose an answer, then read the explanation.' : 'Cevabı seçin, ardından açıklamayı inceleyin.'}</p></div><button class="back-button" id="exitStudy">✕</button></div>
     <div class="progress-card"><div class="progress-head"><strong>${state.settings.language === 'en' ? 'Learning session' : 'Öğrenme oturumu'}</strong><span>${index + 1} / ${currentItems.length}</span></div><div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div></div>
