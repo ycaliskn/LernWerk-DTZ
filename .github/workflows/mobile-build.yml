@@ -1,0 +1,55 @@
+name: LernWerk mobile test builds
+on:
+  workflow_dispatch:
+    inputs:
+      build_signed_ios_ipa:
+        description: Build a device-installable IPA using configured Apple signing secrets
+        required: false
+        type: boolean
+        default: false
+  push:
+    branches: [main, release/full-source-import]
+permissions:
+  contents: read
+concurrency:
+  group: lernwerk-mobile-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  android-debug-apk:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - uses: actions/setup-java@v4
+        with: { distribution: temurin, java-version: '21' }
+      - uses: android-actions/setup-android@v3
+      - run: npm install --no-audit --no-fund
+      - run: npx cap add android
+      - run: npx cap sync android
+      - run: cd android && chmod +x gradlew && ./gradlew --no-daemon assembleDebug
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lernwerk-android-debug-apk
+          path: android/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
+          retention-days: 14
+  ios-simulator:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22 }
+      - run: npm install --no-audit --no-fund
+      - run: npx cap add ios
+      - run: npx cap sync ios
+      - name: Build unsigned iOS Simulator app
+        run: |
+          xcodebuild -workspace ios/App/App.xcworkspace -scheme App -sdk iphonesimulator -configuration Debug -destination 'generic/platform=iOS Simulator' -derivedDataPath "$RUNNER_TEMP/LernWerkDerived" CODE_SIGNING_ALLOWED=NO build
+          ditto -c -k --sequesterRsrc --keepParent "$RUNNER_TEMP/LernWerkDerived/Build/Products/Debug-iphonesimulator/App.app" "$RUNNER_TEMP/LernWerk-iOS-Simulator.zip"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: lernwerk-ios-simulator-app
+          path: ${{ runner.temp }}/LernWerk-iOS-Simulator.zip
+          if-no-files-found: error
+          retention-days: 14
