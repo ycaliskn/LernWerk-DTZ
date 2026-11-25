@@ -300,7 +300,7 @@ function renderStudy() {
   document.querySelector('#exitStudy').addEventListener('click', () => exitStudy());
   document.querySelectorAll('[data-answer]').forEach(button => button.addEventListener('click', () => selectAnswer(Number(button.dataset.answer))));
   document.querySelector('#checkAnswer').addEventListener('click', checkAnswer);
-  document.querySelector('#speakButton').addEventListener('click', () => speak(`${title}. ${sentence}`));
+  document.querySelector('#speakButton').addEventListener('click', () => speak(isPractice ? sentence.replace('___', options[item.answer]) : `${title}. ${sentence}`));
   document.querySelector('#grammarSources')?.addEventListener('click', renderSources);
 }
 
