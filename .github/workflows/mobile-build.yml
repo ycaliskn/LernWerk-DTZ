@@ -55,7 +55,7 @@ jobs:
           grep -q "package: name='de.lernwerk.dtz'" "$RUNNER_TEMP/apk-badging.txt"
           "$APKSIGNER" verify --verbose "$APK"
           sha256sum "$APK" | tee "$RUNNER_TEMP/apk-sha256.txt"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: lernwerk-android-debug-apk
           path: android/app/build/outputs/apk/debug/app-debug.apk
@@ -89,7 +89,7 @@ jobs:
           ditto -c -k --sequesterRsrc --keepParent \
             "$RUNNER_TEMP/LernWerkDerived/Build/Products/Debug-iphonesimulator/App.app" \
             "$RUNNER_TEMP/LernWerk-iOS-Simulator.zip"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: lernwerk-ios-simulator-app
           path: ${{ runner.temp }}/LernWerk-iOS-Simulator.zip
@@ -174,7 +174,7 @@ jobs:
             -authenticationKeyID "$APPLE_API_KEY_ID" \
             -authenticationKeyIssuerID "$APPLE_API_ISSUER_ID" \
             -allowProvisioningUpdates
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: lernwerk-signed-ios-ipa
           path: ${{ runner.temp }}/LernWerkIPA/*.ipa
