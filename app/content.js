@@ -1,3 +1,5 @@
+import { EXTRA_WORDS, EXTRA_VERBS, EXTRA_GRAMMAR, PRACTICE_QUESTIONS } from './extra-content.js';
+
 export const LANGUAGES = [
   { code: 'tr', label: 'Türkçe', native: 'Türkçe' },
   { code: 'en', label: 'İngilizce', native: 'English' },
@@ -171,6 +173,11 @@ export const GRAMMAR = [
   {"id": "g-a1-019", "type": "grammar", "level": "A1", "title": "Demonstrativpronomen dieser/diese/dieses", "titleEn": "Demonstratives: dieser/diese/dieses", "titleTr": "İşaret zamirleri", "explanation": "dies- bir kişiyi veya nesneyi işaret eder; biçimi ismin cinsiyetine ve sayısına uyar.", "explanationEn": "dies- points to a person or thing. Its form agrees with the noun in gender and number.", "example": "Dieses Buch ist interessant.", "meaning": {"tr": "Bu kitap ilginç.", "en": "This book is interesting."}, "quiz": "___ Tasche ist schön.", "options": ["Dieser", "Diese", "Dieses"], "answer": 1, "source": "vhs-Lernportal A1 Themen und Grammatik, Lektion 11"},
   {"id": "g-a1-020", "type": "grammar", "level": "A1", "title": "Ordinalzahlen und Datum", "titleEn": "Ordinal numbers and dates", "titleTr": "Sıra sayıları ve tarih", "explanation": "Tarihlerde sıra sayıları kullanılır. Birinci için erste, diğer birçok sıra sayısı için -te veya -ste eki görülür.", "explanationEn": "Dates use ordinal numbers. The first is erste; many other ordinal numbers use -te or -ste.", "example": "Heute ist der erste Mai.", "meaning": {"tr": "Bugün bir Mayıs.", "en": "Today is the first of May."}, "quiz": "Heute ist der ___ Juni. (2)", "options": ["zwei", "zweite", "zweiten"], "answer": 1, "source": "vhs-Lernportal A1 Themen und Grammatik, Lektion 12"}
 ];
+
+WORDS.push(...EXTRA_WORDS);
+VERBS.push(...EXTRA_VERBS);
+GRAMMAR.push(...EXTRA_GRAMMAR);
+export { PRACTICE_QUESTIONS };
 
 export const TOPICS = [
   { id: 't-a1-01', level: 'A1', title: 'Person: kendini tanıtma ve insanlar', icon: '👋', units: ['Ad, yaş, ülke ve adres', 'Aile ve kişisel ilişkiler', 'Görünüş, günlük alışkanlıklar ve iletişim'] },
