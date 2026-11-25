@@ -280,12 +280,12 @@ function renderStudy() {
     <div class="page-heading"><div><div class="eyebrow">${esc(item.level)} · ${esc(item.topic || (item.type === 'grammar' ? 'Gramer' : item.type === 'verb' ? 'Fiil' : 'Kelime'))}</div><h1>${esc(routeTitle(route))}</h1><p>${state.settings.language === 'en' ? 'Choose an answer, then read the explanation.' : 'Cevabı seçin, ardından açıklamayı inceleyin.'}</p></div><button class="back-button" id="exitStudy">✕</button></div>
     <div class="progress-card"><div class="progress-head"><strong>${state.settings.language === 'en' ? 'Learning session' : 'Öğrenme oturumu'}</strong><span>${index + 1} / ${currentItems.length}</span></div><div class="progress-track"><div class="progress-fill" style="width:${pct}%"></div></div></div>
     <section class="study-card">
-      <div class="study-top"><span>${esc(item.level)} · ${item.type === 'grammar' ? 'GRAMMAR' : item.type === 'verb' || item.infinitive ? 'VERB' : 'VOCABULARY'}</span><span>${index + 1}/${currentItems.length}</span></div>
-      <div class="scene"><span class="scene-emoji">${esc(image)}</span></div>
+      <div class="study-top"><span>${esc(item.level)} · ${isPractice ? 'PRACTICE' : item.type === 'grammar' ? 'GRAMMAR' : item.type === 'verb' || item.infinitive ? 'VERB' : 'VOCABULARY'}</span><span>${index + 1}/${currentItems.length}</span></div>
+      <div class="scene scene-illustration"><img class="scene-art" src="${art}" alt="${esc(artAlt)}" loading="eager"></div>
       <div class="study-body">
         <h2 dir="ltr">${esc(title)}</h2>
-        <p class="sentence" dir="ltr">${esc(sentence)}</p>
-        ${item.type === 'grammar' ? `<div class="note">${esc(grammarExplanation(item))}<br><br><strong dir="ltr">${esc(item.example)}</strong></div>` : item.type === 'verb' || item.infinitive ? renderVerbInfo(item) : `<div class="source-line">${esc(item.plural ? `Plural: ${item.plural}` : '')}</div>`}
+        <p class="sentence ${isPractice ? 'fill-gap-sentence' : ''}" dir="ltr">${esc(sentence)}</p>
+        ${isPractice ? `<div class="note practice-instruction">${state.settings.language === 'en' ? 'Choose the missing word or form. This is a new example, different from the learning card.' : 'Eksik kelimeyi veya fiil biçimini seçin. Bu cümle öğrenme kartındaki örnekten farklıdır.'}</div>` : item.type === 'grammar' ? `<div class="note">${esc(grammarExplanation(item))}<br><br><strong dir="ltr">${esc(item.example)}</strong></div>` : item.type === 'verb' || item.infinitive ? renderVerbInfo(item) : `<div class="source-line">${esc(item.plural ? `Plural: ${item.plural}` : '')}</div>`}
         <div class="toolbar" style="justify-content:center"><button class="chip" id="speakButton">🔊 ${state.settings.language === 'en' ? 'Listen' : 'Dinle'}</button></div>
         <p class="question-label">${esc(prompt)}</p>
         <div class="answers">${options.map((option, i) => `<button class="answer-option" data-answer="${i}">${esc(option)}<span>${String.fromCharCode(65 + i)}</span></button>`).join('')}</div>
