@@ -1,34 +1,35 @@
 # LernWerk – Deutsch A1–B1 / DTZ
 
-A mobile-responsive, offline-first German learning prototype for vocabulary, verbs, grammar, mistake review and mixed practice. It is packaged for Android and iOS with Capacitor 8.
+A mobile-responsive, offline-first German learning app for vocabulary, verbs, grammar, mistake review and independent gap-fill practice. Android/iOS builds use Capacitor 8.
 
-## Included
+## Included in revision 0.3
 - Turkish-first interface and 17-language selector.
-- Cumulative A1/A2/B1 access (A2 includes A1; B1 includes A1 + A2 + B1).
-- Five study areas: vocabulary, verbs, grammar, mistakes and mixed practice.
-- Curated A1 test pack: 58 vocabulary cards, 25 verb cards and 20 grammar exercises.
-- Example sentences and Turkish/English sample translations; German device/browser speech synthesis where supported.
-- Verb forms in Präsens, Präteritum and Perfekt.
-- Official-source register and A1 grammar roadmap.
-- Guest progress persistence in IndexedDB, session resume/restart and spaced mistake review.
-- Tested ad-placement logic (compact slot after every third answer; interstitial cooldown of 20 minutes at a safe transition). Real AdMob is not connected.
+- Cumulative level access: A2 includes A1; B1 includes A1 + A2 + B1.
+- Separate explanation-based learning cards and a fill-in-the-blank practice mode with new sentences.
+- 64 vocabulary cards (58 A1 + 3 A2 + 3 B1).
+- 31 verb cards (25 A1 + 3 A2 + 3 B1), with Präsens, Präteritum and Perfekt.
+- 28 grammar cards (20 A1 + 3 A2 + 5 B1).
+- 15 gap-fill questions (5 per level), linked to the corresponding learning topic for mistake review.
+- Original, offline SVG illustrations for every vocabulary, verb and grammar card.
+- Native Android speech through `@capacitor-community/text-to-speech` 8.0.2, with German voice availability checks and browser fallback.
+- Official-source register and staged grammar roadmap.
+- Guest progress persistence, session resume/restart and spaced mistake review.
 - Java 21 learning-rule module, demo HTTP API, PostgreSQL schema draft and OpenAPI v1 contract.
 
-## Test status — 25 November 2026
-- Node.js: 22 test cases × 3 runs = 66/66 passed.
-- Java learning-rule suite: 3/3 passed.
-- JavaScript syntax checks: 5/5 passed.
-- GitHub Actions CI, Android debug APK build and iOS Simulator build: succeeded for commit `fa835fefd46070860321c1b6fab8e8bca76d18ca`.
-- APK package ID and APK v2 signature verification passed.
-- Physical device installation and browser E2E are not claimed; see `docs/TEST_REPORT.md`.
+## Tests
+- Node.js: 31 test cases × 3 independent runs = 93 successful test executions.
+- Java learning-rule suite: 3 independent runs passed.
+- JavaScript syntax checks and content sentence/answer audits passed.
+- GitHub Actions CI verifies web tests, Java tests and secret scanning.
+- Android debug APK workflow verifies package ID and APK signature.
+- No physical Android device installation or real-device audio playback is claimed; see `docs/TEST_REPORT.md`.
 
-## Important boundaries
-- This is a curated A1 test pack, not the complete Goethe A1 list (~650-word reference scope). A2/B1 learning packs are not populated.
-- The language selector has 17 options, but fully curated learning translations are currently available only for Turkish/English sample content.
-- The current visuals are emoji placeholders, not licensed photography.
-- Account linking, cloud sync, production authentication, encrypted local storage, live AdMob and subscriptions are not connected.
-- iOS Simulator artifact is for Xcode Simulator, not for physical iPhone. A signed device IPA/TestFlight build requires Apple Developer signing material and App Store Connect API secrets in GitHub Actions Secrets.
-- No physical Android or iPhone has been used for installation testing.
+## Content boundaries
+- A1 remains a curated sample pack, not the full Goethe A1 word list (~650-word reference scope).
+- A2 and B1 contain representative samples for trying the level, not complete level curricula.
+- The 17-language selector is present, but curated learning translations currently cover Turkish and English sample content.
+- Account linking, cloud sync, production authentication, live AdMob and subscriptions are not connected.
+- A signed iOS device IPA/TestFlight build is deferred until Apple Developer signing details are configured in GitHub Actions Secrets.
 
 ## Quick start
 ```bash
