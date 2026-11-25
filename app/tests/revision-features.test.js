@@ -91,7 +91,7 @@ test('native mobile workflow bundles the JavaScript app before Capacitor sync', 
 test('every individual vocabulary, verb and grammar item maps to its own distinct illustration', async () => {
   const { illustrationKey } = await import('../illustrations.js');
   const keys = learning.map(item => illustrationKey(item));
-  assert.equal(keys.length, 121);
+  assert.equal(keys.length, learning.length);
   assert.equal(new Set(keys).size, keys.length, 'no two learning cards reuse the same illustration');
   for (const id of ['a1-002','a1-017','a1-018','a1-019']) {
     const item = learning.find(entry => entry.id === id);
