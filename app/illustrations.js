@@ -36,6 +36,9 @@ function keyFor(item){
  if(/arbeit|beruf|bewerbung|verantwortung|📄|💼|🛡️/.test(all+v))return'briefcase';
  if(/arzt|gesund|🩺/.test(all+v))return'doctor';
  if(/bus|verkehr|🚌/.test(all+v))return'bus';
+ if(/geld|preis|rechnung|💶|🏷️|🧾/.test(all+v))return'cart';
+ if(/flughafen|flug|✈️/.test(all+v))return'ticket';
+ if(/kopf|hand|auge|gesund|👁️|✋/.test(all+v))return'doctor';
  if(/voraussetzung|unterschied|📋|⚖️/.test(all+v))return'grammar';
  if(/buch|lesen|lernen|erfahrung|📚|📖|🧠/.test(all+v))return'book';
  if(/famil|name|adresse|mutter|vater|sohn|tochter|kind|teilnehmen|👨|👩|👦|👧|🧒|🧑‍🤝‍🧑/.test(all+v))return'family';
