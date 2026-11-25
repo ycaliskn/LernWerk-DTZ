@@ -1,6 +1,6 @@
 {
-  "name": "lernwerk-dtz",
-  "version": "0.5.0",
+  "name": "deutschkraft-dtz",
+  "version": "0.6.0-preview",
   "private": true,
   "description": "Offline-first DTZ A1-B1 German learning app prototype for iOS and Android via Capacitor.",
   "scripts": {

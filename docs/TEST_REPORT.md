@@ -56,3 +56,16 @@ A local dependency installation in this environment timed out; the actual Androi
 - Arabic and Ukrainian currently cover interface labels only; the learning-content translations remain to be professionally translated and reviewed.
 - iOS is intentionally not built in this revision, per the user's instruction to defer iOS until Apple account information is ready.
 - Production authentication, cloud sync, billing and live AdMob are not connected.
+
+
+## DeutschKraft brand/exam-hub preview (25 November 2026)
+
+- Rebranded the mobile header, app title and manifest to DeutschKraft.
+- Added a locally cached custom lifting-student mascot and new launcher icon assets.
+- Added a separate B1 Prüfungen hub with Hören, Lesen, Schreiben and Sprechen placeholders. No copied model-test tasks are included.
+- Added BAMF DTZ word-list and PONS DE–TR references to the source register with rights notes.
+- Tests: 46/46 passed in each of 3 consecutive runs (138/138).
+- JavaScript syntax checks passed for app.js, core.js, content.js, illustrations.js, i18n.js, sources.js and work-mode.js.
+- Manifest, local asset and service-worker cache checks passed.
+
+**Release limitation:** the current sample catalogue is 64 words, 31 verbs, 28 grammar cards and 15 practice questions. This is not a complete A1/A2/B1 or DTZ catalogue. No APK was produced from this preview. The next release gate is a rights-cleared, independently authored full coverage catalogue with a per-entry image-quality audit.

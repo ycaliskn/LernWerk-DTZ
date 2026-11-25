@@ -1,28 +1,34 @@
-# LernWerk project status – v0.5 Android revision
+# DeutschKraft project status — content research and brand preview
 
-## Implemented in this revision
+## Brand / UI preview
 
-- Global level and native-language selectors are fixed in the top bar on every route. The currently offered interface languages are Turkish, English, Arabic and Ukrainian.
-- All 123 current learning cards (64 vocabulary, 31 verbs, 28 grammar) map to an individual, locally bundled SVG illustration. Similar concepts such as apartment, house, bedroom, kitchen and bathroom use separate scenes. The visual audit rates every illustration at 4/5 or higher; see `docs/IMAGE_AUDIT.md`.
-- Learning mode displays the individual learning card and its relevant illustration.
-- Work mode is a separate two-step exercise: a new direct question with the illustration, followed by a different-context fill-in-the-blank sentence with no illustration, target heading or pre-answer hint.
-- A1 selection uses A1 items only. A2 selection defaults to a 75% A2 / 25% A1 mix. B1 selection defaults to a 75% B1 / 25% A2 mix; A1 is excluded from B1 review. The lower-level review slice can be turned off. The same filter is applied to vocabulary, verbs, grammar and work-mode question pairs.
-- Each learning/work mode has distinct saved progress by selected level, module and subtopic. The section list includes a mixed-all-subtopics choice and displays the corresponding subtopic's own illustration thumbnail.
-- Mistakes are archived under two top-level groups: vocabulary+verbs and grammar. Each then branches by subtopic for targeted review.
-- The separate study/work mode uses the global level and does not introduce another level selector.
-- The PWA cache includes the generated app bundle so that offline launch keeps the current app JavaScript.
+- Product name: DeutschKraft
+- Subtitle: Deutsch A1–B1 · DTZ Vorbereitung
+- Original lifting-learner mascot and launcher icons added.
+- Separate `B1 Prüfungen` hub added with Hören, Lesen, Schreiben and Sprechen placeholders.
+- Internal package ID remains `de.lernwerk.dtz` intentionally, to preserve update compatibility and local progress from the earlier test build. A package-ID migration must be handled separately before a public store release.
 
-## Content scope and language limitations
+## Current sample content (not the full catalogue)
 
-- The A1 pack remains a curated learning sample, not the full Goethe A1 word list.
-- A2 and B1 contain representative examples for testing level selection and weighting; they are not complete Goethe/DTZ catalogues.
-- Interface labels are available in Turkish, English, Arabic and Ukrainian. The curated German learning content and sentence translations are not yet fully translated into Arabic and Ukrainian.
+- 64 vocabulary cards: 58 A1, 3 A2, 3 B1
+- 31 verb cards
+- 28 grammar cards
+- 15 work-mode practice questions
 
-## Build / release status
+This is not the complete Goethe A1/A2/B1 or BAMF DTZ word inventory. Do not advertise this preview as a complete exam-preparation app and do not issue it as the full-content release.
 
-- Android debug APK is built by the GitHub Actions workflow on pushes to `main`; the workflow verifies the application ID and APK v2 signature before uploading the artifact. Gradle replaces Maven Central endpoints with Google EU/global mirrors to mitigate HTTP 429 rate limits.
-- iOS Simulator and signed iOS IPA jobs are deliberately disabled for automatic Android pushes. They can be run later by an explicit workflow dispatch after the owner requests iOS work and configures Apple credentials.
-- Physical Android installation and device-specific German TTS playback still require a real Android phone.
-- Production authentication, cloud sync, billing and live AdMob remain out of scope.
+## Research findings
 
-See `docs/TEST_REPORT.md`, `docs/IMAGE_AUDIT.md` and `docs/BUILD_AND_RELEASE.md`.
+- The BAMF DTZ handbook describes about 2,700 entries across its word-group and alphabetical lists; the alphabetical section has roughly 2,100 main and 600 secondary entries.
+- The BAMF list covers A1/A2/B1 and is meant as a reference for test/material authors, not as a ready-made student learning deck.
+- The grammar coverage map records the seven major BAMF linguistic inventory groups and their subtopics.
+- Official Goethe, BAMF and PONS materials are copyrighted. The app links to them for coverage checks and authors its own explanations, examples, questions and illustrations. Full verbatim list reproduction in a public repository requires redistribution permission.
+
+## Verification
+
+- Node tests: 46/46 in each of three consecutive runs (138/138).
+- JavaScript syntax: 7 modules checked.
+- Manifest/asset/service-worker checks: passed.
+- No new APK was built for this preview because its word and grammar catalogues remain incomplete.
+
+See `docs/CONTENT_SCOPE_AND_RIGHTS.md`, `docs/GRAMMAR_COVERAGE_MAP.md`, `docs/B1_PRUEFUNGEN_HUB.md` and `docs/TEST_REPORT.md`.

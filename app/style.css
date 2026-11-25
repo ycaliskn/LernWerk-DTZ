@@ -33,3 +33,11 @@
 .resume-row small{display:block;margin-top:3px;color:var(--muted);font-size:10px}
 .fill-gap-sentence{background:#f7f8fb;border:1px solid #dce2eb;border-radius:14px;padding:15px 16px;text-align:left;font-size:16px;line-height:1.75}
 @media(max-width:560px){.shell{padding-left:14px;padding-right:14px}.topbar{height:68px;gap:5px}.brand-button{min-width:0;gap:7px}.brand-mark{width:34px;height:34px;border-radius:11px}.brand-copy strong{font-size:14px}.brand-copy small{font-size:10px}.top-actions{gap:5px}.header-select{gap:0}.header-select span{display:none}.header-select select{max-width:59px;padding:8px 16px 8px 7px;font-size:10px}.icon-button{width:34px;height:34px}.topic-row .topic-icon.topic-art{width:42px;height:42px}}
+
+/* DeutschKraft brand */
+.brand-mascot{width:54px;height:54px;object-fit:contain;border-radius:16px;background:#edf3ff;box-shadow:0 6px 18px rgba(40,84,180,.14);}
+.brand-copy strong{letter-spacing:-.025em}
+
+.exam-coming-soon{display:inline-block;margin-top:7px;color:#718096;font-size:11px;font-weight:700}.exam-entry-card{border:1px solid #dce6ff;background:linear-gradient(110deg,#f4f7ff,#fff)}
+
+.hero-mascot{position:relative;z-index:1;width:min(100%,220px);height:185px;object-fit:contain;filter:drop-shadow(0 8px 10px rgba(31,50,88,.14))}.hero-visual{background:linear-gradient(135deg,#e4edff,#fff2df)}

@@ -1,5 +1,5 @@
-const CACHE = 'lernwerk-shell-v2';
-const FILES = ['./', './index.html', './style.css', './dist/app.js', './manifest.webmanifest', './assets/icon.svg', './assets/icon-192.png', './assets/icon-512.png', './assets/icon-180.png'];
+const CACHE = 'deutschkraft-shell-v1';
+const FILES = ['./', './index.html', './style.css', './dist/app.js', './manifest.webmanifest', './assets/icon.svg', './assets/icon-192.png', './assets/icon-512.png', './assets/icon-180.png', './assets/deutschkraft-mascot.png', './assets/deutschkraft-wordmark.svg'];
 self.addEventListener('install', event => event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(FILES))));
 self.addEventListener('activate', event => event.waitUntil(caches.keys().then(keys => Promise.all(keys.filter(key => key !== CACHE).map(key => caches.delete(key))))));
 self.addEventListener('fetch', event => {

@@ -1,6 +1,6 @@
 {
-  "name": "lernwerk-dtz-mobile",
-  "version": "0.5.0",
+  "name": "deutschkraft-mobile",
+  "version": "0.6.0-preview",
   "private": true,
   "type": "module",
   "scripts": {

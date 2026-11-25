@@ -1,4 +1,4 @@
-# LernWerk – Deutsch A1–B1 / DTZ
+# DeutschKraft – Deutsch A1–B1 / DTZ
 
 Offline-first German-learning application prototype built with Capacitor 8.
 
@@ -43,3 +43,8 @@ Open [GitHub Actions](https://github.com/ycaliskn/LernWerk-DTZ/actions) to downl
 - `docs/` – architecture, source, image audit, test and release notes.
 
 This is an independent learning project, not affiliated with or endorsed by Goethe-Institut, BAMF or telc.
+
+
+## Content status
+
+The current built-in deck remains a prototype sample and is not the full Goethe/BAMF DTZ catalogue. See `docs/CONTENT_SCOPE_AND_RIGHTS.md` and `docs/GRAMMAR_COVERAGE_MAP.md` before treating it as a complete exam-preparation release. The B1 Prüfungen hub is a separate placeholder for future Hören/Lesen/Schreiben/Sprechen sets.

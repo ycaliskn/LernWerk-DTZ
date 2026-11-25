@@ -142,7 +142,7 @@ function renderHome() {
   main.innerHTML = `
     <section class="hero">
       <div><div class="eyebrow">DEUTSCH LERNEN · ${esc(state.settings.level)}</div><h1>${state.settings.language === 'en' ? 'Small steps. Strong German.' : 'Her gün küçük adımlar, daha güçlü Almanca.'}</h1><p>${state.settings.language === 'en' ? 'Learn words in context, practise verbs and grammar, and review the mistakes that matter.' : 'Kelimeleri bağlam içinde öğrenin, fiil ve gramer çalışın, yaptığınız hataları tekrar ederek kalıcı öğrenin.'}</p></div>
-      <div class="hero-visual"><span class="hero-emoji">📖</span><small>${esc(levelDescription)}</small></div>
+      <div class="hero-visual"><img class="hero-mascot" src="./assets/deutschkraft-mascot.png" alt="DeutschKraft Lern-Maskottchen"/><small>${esc(levelDescription)}</small></div>
     </section>
     <section class="progress-card"><div class="progress-head"><strong>${t('progress')}</strong><span>${doneCount} / ${totalCount} ${state.settings.language === 'en' ? 'items' : 'öğe'} · ${percent}%</span></div><div class="progress-track"><div class="progress-fill" style="width:${percent}%"></div></div></section>
     <div class="section-title"><div><h2>${t('choose')}</h2><p>${state.settings.language === 'en' ? 'Five ways to practise' : 'Beş farklı çalışma alanı'}</p></div></div>
@@ -155,6 +155,7 @@ function renderHome() {
     <button class="mode-card" data-route="study-menu"><div><strong>${t('mixed')}</strong><p>${state.settings.language === 'en' ? 'Choose vocabulary, verbs, mixed words + verbs, or grammar.' : 'Kelime, fiil, karışık kelime + fiil veya gramer çalışın.'}</p></div><span>🧠</span></button>
     <div class="section-title"><div><h2>${state.settings.language === 'en' ? 'A1 course roadmap' : 'A1 konu sıralaması'}</h2><p>${state.settings.language === 'en' ? 'Official exam themes mapped into learning units' : 'Resmî sınav temalarına göre düzenlenen öğrenme aşamaları'}</p></div><button class="secondary-button" data-route="topics">${state.settings.language === 'en' ? 'View all' : 'Tümünü gör'}</button></div>
     <button class="source-entry-card" data-route="sources"><span class="source-entry-icon">📚</span><span><strong>Kaynaklar ve gramer müfredatı</strong><small>Goethe · BAMF · vhs-Lernportal · Deutsche Welle</small></span><span class="source-entry-arrow">›</span></button>
+    <button class="source-entry-card exam-entry-card" data-route="exams"><span class="source-entry-icon">🏋️</span><span><strong>B1 Prüfungen</strong><small>Hören · Lesen · Schreiben · Sprechen · Deneme sınavları</small></span><span class="source-entry-arrow">›</span></button>
     <div class="note">${t('sources')}: Goethe-Institut A1/A2/B1 Wortlisten ve BAMF DTZ referansları. Demo içeriği başlangıç örnekleridir; tam liste değildir.</div>
 
     ${savedSessionCard()}
@@ -188,8 +189,21 @@ function openRoute(next) {
   if (next === 'topics') return renderTopics();
   if (next === 'study-menu') return renderStudyModeMenu();
   if (next === 'sources') return renderSources();
+  if (next === 'exams') return renderExamHub();
   if (next === 'words' || next === 'verbs' || next === 'grammar' || next === 'mixed' || next === 'mistakes' || next === 'practice') return startModule(next);
   renderHome();
+}
+
+function renderExamHub() {
+  route = 'exams'; setNav('home');
+  const skills = [
+    ['Hören','Dinleme sınavı · ses kayıtları ve soru setleri','🎧'],
+    ['Lesen','Okuma sınavı · ilanlar, bilgilendirmeler ve metinler','📖'],
+    ['Schreiben','Yazma sınavı · mektup ve e-posta görevleri','✍️'],
+    ['Sprechen','Konuşma sınavı · kendini tanıtma ve gemeinsam planen','🗣️'],
+  ];
+  main.innerHTML = `<div class="page-heading"><div><div class="eyebrow">DTZ · A2–B1</div><h1>B1 Prüfungen</h1><p>Kelime ve gramer çalışmalarından ayrı, sınav becerilerine özel bölüm.</p></div><button class="back-button" id="examHubBack">← ${t('home')}</button></div><div class="module-grid">${skills.map(([title,description,icon]) => `<section class="module-card exam-skill-card"><span class="module-icon tint-blue">${icon}</span><span><h3>${title}</h3><p>${description}</p><small class="exam-coming-soon">İçerik sonraki aşamada eklenecek</small></span></section>`).join('')}</div><div class="note">Bu bölüm ayrı tutulur; kelime/fiil/gramer ilerlemesini değiştirmez. Resmî deneme materyalleri ve özgün sorular lisans/kaynak denetiminden sonra eklenecek.</div>`;
+  document.querySelector('#examHubBack').addEventListener('click', renderHome);
 }
 
 function renderStudyModeMenu() {
