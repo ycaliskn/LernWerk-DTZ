@@ -1,4 +1,7 @@
-import { LANGUAGES, WORDS, VERBS, GRAMMAR, TOPICS } from './content.js';
+import { LANGUAGES, WORDS, VERBS, GRAMMAR, TOPICS, PRACTICE_QUESTIONS } from './content.js';
+import { illustrationDataUri, illustrationAlt } from './illustrations.js';
+import { Capacitor } from '@capacitor/core';
+import { TextToSpeech } from '@capacitor-community/text-to-speech';
 import { UI_TEXT } from './i18n.js';
 import { GRAMMAR_CURRICULUM, OFFICIAL_SOURCES } from './sources.js';
 import { levelsIncluded, isItemAvailable, recordAnswer, shouldShowMiniAd, shouldShowInterstitial, createSession, chooseResumeAction, resumeSession } from './core.js';
@@ -160,7 +163,7 @@ function openRoute(next) {
   if (next === 'topics') return renderTopics();
   if (next === 'study-menu') return renderStudyModeMenu();
   if (next === 'sources') return renderSources();
-  if (next === 'words' || next === 'verbs' || next === 'grammar' || next === 'mixed' || next === 'mistakes') return startModule(next);
+  if (next === 'words' || next === 'verbs' || next === 'grammar' || next === 'mixed' || next === 'mistakes' || next === 'practice') return startModule(next);
   renderHome();
 }
 
@@ -188,6 +191,7 @@ function filteredItems(module) {
   if (module === 'words') return words;
   if (module === 'verbs') return verbs;
   if (module === 'grammar') return grammar;
+  if (module === 'practice') return PRACTICE_QUESTIONS.filter(item => allowed.includes(item.level));
   if (module === 'mixed') return [...words, ...verbs];
   if (module === 'mistakes') {
     const mistakeIds = new Set(Object.keys(state.progress.mistakes));
@@ -216,7 +220,7 @@ function startModule(module) {
 
 function renderResumeChoice(module, items, saved) {
   route = module; setNav(module === 'mixed' ? 'home' : module);
-  const title = module === 'words' ? t('words') : module === 'verbs' ? t('verbs') : module === 'grammar' ? t('grammar') : module === 'mistakes' ? t('mistakes') : t('mixed');
+  const title = module === 'words' ? t('words') : module === 'verbs' ? t('verbs') : module === 'grammar' ? t('grammar') : module === 'mistakes' ? t('mistakes') : module === 'practice' ? (state.settings.language === 'en' ? 'Fill in the blanks' : 'Boşluk doldurma') : t('mixed');
   main.innerHTML = `<section class="panel complete-card"><div class="complete-icon">⏸️</div><div class="eyebrow">${esc(title)}</div><h2>${state.settings.language === 'en' ? 'You have an unfinished session' : 'Tamamlanmamış bir çalışmanız var'}</h2><p>${saved.itemIndex + 1}. ${state.settings.language === 'en' ? 'item' : 'öğeden'} devam edebilirsiniz. Baştan başlamak kayıtlı istatistiklerinizi silmez.</p><button class="primary-button" id="continueSession">${t('continue')}</button><button class="secondary-button" style="width:100%;margin-top:9px" id="restartSession">${t('restart')}</button></section>`;
   document.querySelector('#continueSession').addEventListener('click', () => {
     const byId = new Map(items.map(item => [item.id, item]));
