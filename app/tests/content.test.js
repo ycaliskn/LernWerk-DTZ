@@ -2,12 +2,11 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { LANGUAGES, WORDS, VERBS, GRAMMAR, TOPICS } from '../content.js';
 
-test('language catalogue contains the expected 17 unique language codes', () => {
-  assert.equal(LANGUAGES.length, 17);
-  assert.equal(new Set(LANGUAGES.map(language => language.code)).size, 17);
+test('language catalogue contains exactly the four requested native languages', () => {
+  assert.deepEqual(LANGUAGES.map(language => language.code), ['tr','en','ar','uk']);
+  assert.equal(new Set(LANGUAGES.map(language => language.code)).size, 4);
   assert.equal(LANGUAGES[0].code, 'tr');
   assert.equal(LANGUAGES[1].code, 'en');
-  for (const code of ['ar','uk','ru','hi','ur','fa']) assert.ok(LANGUAGES.some(language => language.code === code));
 });
 
 test('all initial learning content is explicitly labelled A1 and has a valid answer', () => {
