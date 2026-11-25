@@ -15,7 +15,7 @@ test('practice questions are linked to the exact learning objective they test',(
  assert.equal(byId.get('v-a1-003').infinitive,'gehen');
  assert.equal(byId.get('a1-028').target,'die Tomate');
  assert.equal(byId.get('v-a1-012').infinitive,'trinken');
- assert.match(byId.get('b1-g-004').title,/Verb und edat|Verb-preposition/i);
+ assert.equal(byId.get('b1-g-004').title,'Fiil ve edat bağlantıları');
  assert.match(byId.get('b1-g-005').title,/obwohl/i);
 });
 test('every word, verb and grammar card receives a vector illustration',()=>{for(const item of learning){const svg=illustrationSvg(item);assert.ok(svg.startsWith('<svg '));assert.ok(svg.includes('aria-label='));assert.ok(!svg.includes('😀')&&!svg.includes('📐'));assert.ok(illustrationDataUri(item).startsWith('data:image/svg+xml;charset=utf-8,'));assert.ok(illustrationAlt(item).length>5);}});
