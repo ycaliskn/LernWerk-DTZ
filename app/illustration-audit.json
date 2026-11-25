@@ -1,0 +1,986 @@
+[
+  {
+    "id": "a1-001",
+    "level": "A1",
+    "term": "der Apfel",
+    "illustrationKey": "apple-fruit",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "a1-002",
+    "level": "A1",
+    "term": "die Wohnung",
+    "illustrationKey": "apartment-building",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-003",
+    "level": "A1",
+    "term": "die Arbeit",
+    "illustrationKey": "work-desk",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-004",
+    "level": "A1",
+    "term": "der Arzt",
+    "illustrationKey": "doctor-stethoscope",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "a1-005",
+    "level": "A1",
+    "term": "der Bus",
+    "illustrationKey": "city-bus",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "a1-006",
+    "level": "A1",
+    "term": "das Buch",
+    "illustrationKey": "open-book",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "a1-007",
+    "level": "A1",
+    "term": "die Familie",
+    "illustrationKey": "family-portrait",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "a1-008",
+    "level": "A1",
+    "term": "einkaufen",
+    "illustrationKey": "shopping-basket",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "a1-009",
+    "level": "A1",
+    "term": "der Name",
+    "illustrationKey": "name-badge",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-010",
+    "level": "A1",
+    "term": "die Adresse",
+    "illustrationKey": "street-address-map",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-011",
+    "level": "A1",
+    "term": "die Telefonnummer",
+    "illustrationKey": "telephone-handset",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "a1-012",
+    "level": "A1",
+    "term": "das Kind",
+    "illustrationKey": "playing-child",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-013",
+    "level": "A1",
+    "term": "die Mutter",
+    "illustrationKey": "mother-portrait",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-014",
+    "level": "A1",
+    "term": "der Vater",
+    "illustrationKey": "father-portrait",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-015",
+    "level": "A1",
+    "term": "der Sohn",
+    "illustrationKey": "boy-portrait",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-016",
+    "level": "A1",
+    "term": "die Tochter",
+    "illustrationKey": "girl-portrait",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-017",
+    "level": "A1",
+    "term": "das Zimmer",
+    "illustrationKey": "bedroom-interior",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-018",
+    "level": "A1",
+    "term": "die Küche",
+    "illustrationKey": "kitchen-stove",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-019",
+    "level": "A1",
+    "term": "das Bad",
+    "illustrationKey": "bathroom-bathtub",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "a1-020",
+    "level": "A1",
+    "term": "der Tisch",
+    "illustrationKey": "dining-table",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-021",
+    "level": "A1",
+    "term": "der Stuhl",
+    "illustrationKey": "wooden-chair",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-022",
+    "level": "A1",
+    "term": "das Fenster",
+    "illustrationKey": "window-curtains",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-023",
+    "level": "A1",
+    "term": "die Milch",
+    "illustrationKey": "milk-carton",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-024",
+    "level": "A1",
+    "term": "das Wasser",
+    "illustrationKey": "water-glass",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-025",
+    "level": "A1",
+    "term": "der Käse",
+    "illustrationKey": "cheese-wedge",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "a1-026",
+    "level": "A1",
+    "term": "das Ei",
+    "illustrationKey": "egg-breakfast",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "a1-027",
+    "level": "A1",
+    "term": "die Kartoffel",
+    "illustrationKey": "potato-tuber",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "a1-028",
+    "level": "A1",
+    "term": "die Tomate",
+    "illustrationKey": "tomato-vine",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "a1-029",
+    "level": "A1",
+    "term": "das Geld",
+    "illustrationKey": "euro-wallet",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-030",
+    "level": "A1",
+    "term": "der Preis",
+    "illustrationKey": "price-tag",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-031",
+    "level": "A1",
+    "term": "die Rechnung",
+    "illustrationKey": "restaurant-bill",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-032",
+    "level": "A1",
+    "term": "die Kleidung",
+    "illustrationKey": "folded-shirt",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-033",
+    "level": "A1",
+    "term": "der Zug",
+    "illustrationKey": "passenger-train",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "a1-034",
+    "level": "A1",
+    "term": "das Fahrrad",
+    "illustrationKey": "bicycle-sideview",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "a1-035",
+    "level": "A1",
+    "term": "die Fahrkarte",
+    "illustrationKey": "rail-ticket",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-036",
+    "level": "A1",
+    "term": "der Flughafen",
+    "illustrationKey": "airport-terminal",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "a1-037",
+    "level": "A1",
+    "term": "das Wetter",
+    "illustrationKey": "sunny-cloud-weather",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-038",
+    "level": "A1",
+    "term": "der Regen",
+    "illustrationKey": "rain-umbrella",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "a1-039",
+    "level": "A1",
+    "term": "die Schule",
+    "illustrationKey": "school-building",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "a1-040",
+    "level": "A1",
+    "term": "der Kindergarten",
+    "illustrationKey": "kindergarten-toys",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "a1-041",
+    "level": "A1",
+    "term": "der Lehrer",
+    "illustrationKey": "teacher-blackboard",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-042",
+    "level": "A1",
+    "term": "die Frage",
+    "illustrationKey": "question-mark-card",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-043",
+    "level": "A1",
+    "term": "die Antwort",
+    "illustrationKey": "answer-check-card",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-044",
+    "level": "A1",
+    "term": "der Termin",
+    "illustrationKey": "appointment-calendar",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-045",
+    "level": "A1",
+    "term": "die Apotheke",
+    "illustrationKey": "pharmacy-cross",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "a1-046",
+    "level": "A1",
+    "term": "das Krankenhaus",
+    "illustrationKey": "hospital-building",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "a1-047",
+    "level": "A1",
+    "term": "die Freizeit",
+    "illustrationKey": "hobby-paintbrush",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-048",
+    "level": "A1",
+    "term": "der Sport",
+    "illustrationKey": "football-sport",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "a1-049",
+    "level": "A1",
+    "term": "der Beruf",
+    "illustrationKey": "work-hardhat",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-050",
+    "level": "A1",
+    "term": "die Pause",
+    "illustrationKey": "coffee-break-cup",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-051",
+    "level": "A1",
+    "term": "die Uhr",
+    "illustrationKey": "analog-clock",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-052",
+    "level": "A1",
+    "term": "der Montag",
+    "illustrationKey": "monday-calendar",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-053",
+    "level": "A1",
+    "term": "der Morgen",
+    "illustrationKey": "morning-sunrise",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-054",
+    "level": "A1",
+    "term": "der Kopf",
+    "illustrationKey": "human-head-profile",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-055",
+    "level": "A1",
+    "term": "die Hand",
+    "illustrationKey": "open-hand",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-056",
+    "level": "A1",
+    "term": "das Auge",
+    "illustrationKey": "human-eye",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "a1-057",
+    "level": "A1",
+    "term": "der Bahnhof",
+    "illustrationKey": "train-station-platform",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a1-058",
+    "level": "A1",
+    "term": "die Straße",
+    "illustrationKey": "city-street-crossing",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a2-w-001",
+    "level": "A2",
+    "term": "die Erfahrung",
+    "illustrationKey": "experience-medal",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a2-w-002",
+    "level": "A2",
+    "term": "die Verspätung",
+    "illustrationKey": "late-train-clock",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a2-w-003",
+    "level": "A2",
+    "term": "die Bewerbung",
+    "illustrationKey": "job-application-folder",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "b1-w-001",
+    "level": "B1",
+    "term": "die Voraussetzung",
+    "illustrationKey": "requirement-checklist",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "b1-w-002",
+    "level": "B1",
+    "term": "der Unterschied",
+    "illustrationKey": "balance-comparison",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "b1-w-003",
+    "level": "B1",
+    "term": "die Verantwortung",
+    "illustrationKey": "responsibility-shield",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "v-a1-001",
+    "level": "A1",
+    "term": "sein",
+    "illustrationKey": "being-person",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "v-a1-002",
+    "level": "A1",
+    "term": "haben",
+    "illustrationKey": "holding-box",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "v-a1-003",
+    "level": "A1",
+    "term": "gehen",
+    "illustrationKey": "walking-person",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "v-a1-004",
+    "level": "A1",
+    "term": "machen",
+    "illustrationKey": "making-tools",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "v-a1-005",
+    "level": "A1",
+    "term": "fahren",
+    "illustrationKey": "driving-car",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "v-a1-006",
+    "level": "A1",
+    "term": "kommen",
+    "illustrationKey": "arriving-door",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "v-a1-007",
+    "level": "A1",
+    "term": "wohnen",
+    "illustrationKey": "living-house",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "v-a1-008",
+    "level": "A1",
+    "term": "lernen",
+    "illustrationKey": "learning-flashcards",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "v-a1-009",
+    "level": "A1",
+    "term": "arbeiten",
+    "illustrationKey": "working-laptop",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "v-a1-010",
+    "level": "A1",
+    "term": "kaufen",
+    "illustrationKey": "buying-bag",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "v-a1-011",
+    "level": "A1",
+    "term": "essen",
+    "illustrationKey": "eating-plate",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "v-a1-012",
+    "level": "A1",
+    "term": "trinken",
+    "illustrationKey": "drinking-cup",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "v-a1-013",
+    "level": "A1",
+    "term": "sprechen",
+    "illustrationKey": "speaking-bubbles",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "v-a1-014",
+    "level": "A1",
+    "term": "lesen",
+    "illustrationKey": "reading-glasses-book",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "v-a1-015",
+    "level": "A1",
+    "term": "schlafen",
+    "illustrationKey": "sleeping-bed",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "v-a1-016",
+    "level": "A1",
+    "term": "nehmen",
+    "illustrationKey": "taking-parcel",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "v-a1-017",
+    "level": "A1",
+    "term": "mögen",
+    "illustrationKey": "liking-heart",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "v-a1-018",
+    "level": "A1",
+    "term": "anfangen",
+    "illustrationKey": "starting-flag",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "v-a1-019",
+    "level": "A1",
+    "term": "helfen",
+    "illustrationKey": "helping-hands",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "v-a1-020",
+    "level": "A1",
+    "term": "müssen",
+    "illustrationKey": "must-obligation-sign",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "v-a1-021",
+    "level": "A1",
+    "term": "können",
+    "illustrationKey": "can-ability-person",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "v-a1-022",
+    "level": "A1",
+    "term": "dürfen",
+    "illustrationKey": "permission-open-door",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "v-a1-023",
+    "level": "A1",
+    "term": "sollen",
+    "illustrationKey": "should-direction-sign",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "v-a1-024",
+    "level": "A1",
+    "term": "wollen",
+    "illustrationKey": "want-wishlist",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "v-a1-025",
+    "level": "A1",
+    "term": "geben",
+    "illustrationKey": "giving-gift",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a2-v-001",
+    "level": "A2",
+    "term": "teilnehmen",
+    "illustrationKey": "participating-group",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a2-v-002",
+    "level": "A2",
+    "term": "umziehen",
+    "illustrationKey": "moving-house-boxes",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a2-v-003",
+    "level": "A2",
+    "term": "vereinbaren",
+    "illustrationKey": "arranging-calendar-pen",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "b1-v-001",
+    "level": "B1",
+    "term": "vermeiden",
+    "illustrationKey": "avoiding-obstacle",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "b1-v-002",
+    "level": "B1",
+    "term": "absagen",
+    "illustrationKey": "cancelling-calendar",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "b1-v-003",
+    "level": "B1",
+    "term": "vorschlagen",
+    "illustrationKey": "suggesting-lightbulb",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "g-a1-001",
+    "level": "A1",
+    "term": "Artikel: der, die, das",
+    "illustrationKey": "three-article-cubes",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "g-a1-002",
+    "level": "A1",
+    "term": "Präsens – düzenli fiiller",
+    "illustrationKey": "present-tense-clock",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "g-a1-003",
+    "level": "A1",
+    "term": "W-Fragen",
+    "illustrationKey": "question-word-bubbles",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "g-a1-004",
+    "level": "A1",
+    "term": "Negation: nicht / kein",
+    "illustrationKey": "negation-no-symbol",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "g-a1-005",
+    "level": "A1",
+    "term": "Personalpronomen und sein",
+    "illustrationKey": "pronoun-person-cards",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "g-a1-006",
+    "level": "A1",
+    "term": "Ja-/Nein-Fragen und Satzstellung",
+    "illustrationKey": "yes-no-question-arrows",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "g-a1-007",
+    "level": "A1",
+    "term": "Possessivartikel",
+    "illustrationKey": "possessive-family-labels",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "g-a1-008",
+    "level": "A1",
+    "term": "Indefinitartikel und Negationsartikel",
+    "illustrationKey": "indefinite-article-cards",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "g-a1-009",
+    "level": "A1",
+    "term": "Adjektive prädikativ",
+    "illustrationKey": "adjective-colour-swatches",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "g-a1-010",
+    "level": "A1",
+    "term": "Plural und Nullartikel",
+    "illustrationKey": "plural-many-objects",
+    "score": 4.0,
+    "note": "Soyut dilbilgisi/işlev için sade ama anlaşılır sembolik anlatım."
+  },
+  {
+    "id": "g-a1-011",
+    "level": "A1",
+    "term": "Akkusativ mit Artikeln",
+    "illustrationKey": "accusative-arrow-target",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "g-a1-012",
+    "level": "A1",
+    "term": "Trennbare Verben",
+    "illustrationKey": "separable-prefix-puzzle",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "g-a1-013",
+    "level": "A1",
+    "term": "Temporalangaben und Inversion",
+    "illustrationKey": "time-word-timeline",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "g-a1-014",
+    "level": "A1",
+    "term": "Dativ mit mit, bei, zu, nach",
+    "illustrationKey": "dative-preposition-map",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "g-a1-015",
+    "level": "A1",
+    "term": "Imperativ",
+    "illustrationKey": "imperative-speech-bubble",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "g-a1-016",
+    "level": "A1",
+    "term": "Modalverben können, müssen, möchten",
+    "illustrationKey": "modal-verb-control-panel",
+    "score": 4.0,
+    "note": "Soyut dilbilgisi/işlev için sade ama anlaşılır sembolik anlatım."
+  },
+  {
+    "id": "g-a1-017",
+    "level": "A1",
+    "term": "Perfekt: haben oder sein",
+    "illustrationKey": "perfect-tense-calendar",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "g-a1-018",
+    "level": "A1",
+    "term": "Komparativ",
+    "illustrationKey": "comparative-two-mountains",
+    "score": 5.0,
+    "note": "Konuya doğrudan karşılık veren nesne/eylem çizimi."
+  },
+  {
+    "id": "g-a1-019",
+    "level": "A1",
+    "term": "Demonstrativpronomen dieser/diese/dieses",
+    "illustrationKey": "demonstrative-pointing-hand",
+    "score": 4.0,
+    "note": "Soyut dilbilgisi/işlev için sade ama anlaşılır sembolik anlatım."
+  },
+  {
+    "id": "g-a1-020",
+    "level": "A1",
+    "term": "Ordinalzahlen und Datum",
+    "illustrationKey": "ordinal-date-calendar",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a2-g-001",
+    "level": "A2",
+    "term": "weil – yan cümle",
+    "illustrationKey": "weil-clause-domino",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a2-g-002",
+    "level": "A2",
+    "term": "Dönüşlü fiiller",
+    "illustrationKey": "reflexive-mirror-person",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "a2-g-003",
+    "level": "A2",
+    "term": "Yer bildiren edatlar",
+    "illustrationKey": "two-way-preposition-room",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "b1-g-001",
+    "level": "B1",
+    "term": "Konjunktiv II – rica ve varsayım",
+    "illustrationKey": "konjunktiv-wish-cloud",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "b1-g-002",
+    "level": "B1",
+    "term": "Passiv – edilgen yapı",
+    "illustrationKey": "passive-conveyor-belt",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  },
+  {
+    "id": "b1-g-003",
+    "level": "B1",
+    "term": "Relativsätze – ilgi cümleleri",
+    "illustrationKey": "relative-clause-link-chain",
+    "score": 4.0,
+    "note": "Soyut dilbilgisi/işlev için sade ama anlaşılır sembolik anlatım."
+  },
+  {
+    "id": "b1-g-004",
+    "level": "B1",
+    "term": "Fiil ve edat bağlantıları",
+    "illustrationKey": "verb-preposition-link",
+    "score": 4.0,
+    "note": "Soyut dilbilgisi/işlev için sade ama anlaşılır sembolik anlatım."
+  },
+  {
+    "id": "b1-g-005",
+    "level": "B1",
+    "term": "obwohl – zıtlık bildiren bağlaç",
+    "illustrationKey": "obwohl-contrast-rain",
+    "score": 4.5,
+    "note": "Konuyu bağlamı ve ayırt edici görsel öğeleriyle anlatan özgün çizim."
+  }
+]

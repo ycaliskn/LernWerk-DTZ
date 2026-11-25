@@ -2,6 +2,11 @@ name: LernWerk mobile test builds
 on:
   workflow_dispatch:
     inputs:
+      build_ios_simulator:
+        description: Build iOS Simulator only when explicitly requested by the user
+        required: false
+        type: boolean
+        default: false
       build_signed_ios_ipa:
         description: Build a device-installable IPA using the Apple signing secrets configured in the repository
         required: false
@@ -66,6 +71,7 @@ jobs:
 
   ios-simulator:
     name: iOS Simulator build (not a device IPA)
+    if: ${{ github.event_name == 'workflow_dispatch' && inputs.build_ios_simulator }}
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4

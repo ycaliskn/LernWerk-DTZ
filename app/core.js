@@ -102,3 +102,21 @@ export function sessionStorageKey(level, module, subsection = 'all') {
 export function mistakeArchiveKey(module, subsection = 'all') {
   return `${module}::${subsection || 'all'}`;
 }
+
+/** Uses the selected level as the focus: 75% target level and about 25% previous level. */
+export function mixLevelReview(items, selectedLevel, enabled = true) {
+  const lowerLevel = selectedLevel === 'A2' ? 'A1' : selectedLevel === 'B1' ? 'A2' : null;
+  const target = items.filter(item => item.level === selectedLevel);
+  if (!enabled || !lowerLevel || !target.length) return [...target];
+  const lower = items.filter(item => item.level === lowerLevel);
+  if (!lower.length) return [...target];
+  const reviewCount = Math.min(lower.length, Math.max(1, Math.round(target.length / 3)));
+  const review = [...lower].sort((a,b) => Number(Boolean(a.completed)) - Number(Boolean(b.completed))).slice(0, reviewCount);
+  const result = [];
+  let ti = 0, ri = 0;
+  while (ti < target.length || ri < review.length) {
+    for (let n = 0; n < 3 && ti < target.length; n++) result.push(target[ti++]);
+    if (ri < review.length) result.push(review[ri++]);
+  }
+  return result;
+}

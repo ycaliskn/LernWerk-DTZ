@@ -1,26 +1,28 @@
-# LernWerk project status – v0.4
+# LernWerk project status – v0.5 Android revision
 
 ## Implemented in this revision
 
-- 121 learning cards have distinct hand-authored SVG illustrations, including separate artwork for apartment, bedroom, kitchen and bathroom.
-- Fill-in-the-blank practice is a separate question mode with new sentences; the question screen intentionally has no illustration, learning-card title or pre-answer hint.
-- Per-module and per-subsection learning progress and resume keys.
-- Legacy session migration to subsection-specific progress keys.
-- Mistake archive split into vocabulary, verbs and grammar, with additional topic/subsection filters and targeted review.
-- Optional 25% A1 vocabulary review slice in A2 word sessions; also applied to combined word+verb sessions.
-- Native Android TTS plugin integration remains in place.
+- Global level and native-language selectors are fixed in the top bar on every route. The currently offered interface languages are Turkish, English, Arabic and Ukrainian.
+- All 123 current learning cards (64 vocabulary, 31 verbs, 28 grammar) map to an individual, locally bundled SVG illustration. Similar concepts such as apartment, house, bedroom, kitchen and bathroom use separate scenes. The visual audit rates every illustration at 4/5 or higher; see `docs/IMAGE_AUDIT.md`.
+- Learning mode displays the individual learning card and its relevant illustration.
+- Work mode is a separate two-step exercise: a new direct question with the illustration, followed by a different-context fill-in-the-blank sentence with no illustration, target heading or pre-answer hint.
+- A1 selection uses A1 items only. A2 selection defaults to a 75% A2 / 25% A1 mix. B1 selection defaults to a 75% B1 / 25% A2 mix; A1 is excluded from B1 review. The lower-level review slice can be turned off. The same filter is applied to vocabulary, verbs, grammar and work-mode question pairs.
+- Each learning/work mode has distinct saved progress by selected level, module and subtopic. The section list includes a mixed-all-subtopics choice and displays the corresponding subtopic's own illustration thumbnail.
+- Mistakes are archived under two top-level groups: vocabulary+verbs and grammar. Each then branches by subtopic for targeted review.
+- The separate study/work mode uses the global level and does not introduce another level selector.
+- The PWA cache includes the generated app bundle so that offline launch keeps the current app JavaScript.
 
-## Current content sample
+## Content scope and language limitations
 
-- A1: 58+ words in the original pack plus A1 expansion, 25 verbs and 20 grammar exercises.
-- A2/B1: representative sample content for level testing; not complete official catalogues.
-- Learning-card art is inline original SVG and works offline.
+- The A1 pack remains a curated learning sample, not the full Goethe A1 word list.
+- A2 and B1 contain representative examples for testing level selection and weighting; they are not complete Goethe/DTZ catalogues.
+- Interface labels are available in Turkish, English, Arabic and Ukrainian. The curated German learning content and sentence translations are not yet fully translated into Arabic and Ukrainian.
 
-## Not yet verified / not included
+## Build / release status
 
-- This revision still requires a fresh GitHub Actions Android build and APK artifact before distribution.
-- Physical Android installation and device-specific TTS playback have not been tested here.
-- Signed iOS device IPA/TestFlight is deferred until Apple credentials are configured by the account owner.
+- Android debug APK is built by the GitHub Actions workflow on pushes to `main`; the workflow verifies the application ID and APK v2 signature before uploading the artifact.
+- iOS Simulator and signed iOS IPA jobs are deliberately disabled for automatic Android pushes. They can be run later by an explicit workflow dispatch after the owner requests iOS work and configures Apple credentials.
+- Physical Android installation and device-specific German TTS playback still require a real Android phone.
 - Production authentication, cloud sync, billing and live AdMob remain out of scope.
 
-See `docs/TEST_REPORT.md` for exact checks and limitations.
+See `docs/TEST_REPORT.md`, `docs/IMAGE_AUDIT.md` and `docs/BUILD_AND_RELEASE.md`.

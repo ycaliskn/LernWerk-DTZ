@@ -1,50 +1,45 @@
 # LernWerk – Deutsch A1–B1 / DTZ
 
-A mobile-responsive, offline-first German learning app for vocabulary, verbs, grammar, mistake review and independent gap-fill practice. Android/iOS builds use Capacitor 8.
+Offline-first German-learning application prototype built with Capacitor 8.
 
-## Included in revision 0.3
-- Turkish-first interface and 17-language selector.
-- Cumulative level access: A2 includes A1; B1 includes A1 + A2 + B1.
-- Separate explanation-based learning cards and a fill-in-the-blank practice mode with new sentences.
-- 64 vocabulary cards (58 A1 + 3 A2 + 3 B1).
-- 31 verb cards (25 A1 + 3 A2 + 3 B1), with Präsens, Präteritum and Perfekt.
-- 28 grammar cards (20 A1 + 3 A2 + 5 B1).
-- 15 gap-fill questions (5 per level), linked to the corresponding learning topic for mistake review.
-- Original, offline SVG illustrations for every vocabulary, verb and grammar card.
-- Native Android speech through `@capacitor-community/text-to-speech` 8.0.2, with German voice availability checks and browser fallback.
-- Official-source register and staged grammar roadmap.
-- Guest progress persistence, session resume/restart and spaced mistake review.
-- Java 21 learning-rule module, demo HTTP API, PostgreSQL schema draft and OpenAPI v1 contract.
+## v0.5 Android revision
 
-## Tests
-- Node.js: 31 test cases × 3 independent runs = 93 successful test executions.
-- Java learning-rule suite: 3 independent runs passed.
-- JavaScript syntax checks and content sentence/answer audits passed.
-- GitHub Actions CI verifies web tests, Java tests and secret scanning.
-- Android debug APK workflow verifies package ID and APK signature.
-- No physical Android device installation or real-device audio playback is claimed; see `docs/TEST_REPORT.md`.
+- Global A1/A2/B1 and native-language selectors available throughout the app.
+- Interface languages: Turkish, English, Arabic and Ukrainian.
+- Level weighting: A1 only; A2 = 75% A2 + 25% A1; B1 = 75% B1 + 25% A2 (never A1). Lower-level review can be disabled.
+- Vocabulary, verbs and grammar each offer an all-subtopics mixed entry.
+- Independent learning/work progress by level, module and subtopic, with continue/restart.
+- Individual SVG artwork for all 123 current learning cards; no repeated generic picture across cards.
+- Two-step work mode: picture-led direct question followed by a new-context, no-image fill-in-the-blank.
+- Mistake archives split into vocabulary+verbs and grammar, then by subtopic.
 
-## Content boundaries
-- A1 remains a curated sample pack, not the full Goethe A1 word list (~650-word reference scope).
-- A2 and B1 contain representative samples for trying the level, not complete level curricula.
-- The 17-language selector is present, but curated learning translations currently cover Turkish and English sample content.
-- Account linking, cloud sync, production authentication, live AdMob and subscriptions are not connected.
-- A signed iOS device IPA/TestFlight build is deferred until Apple Developer signing details are configured in GitHub Actions Secrets.
+## Content scope
 
-## Quick start
+Current A1/A2/B1 cards are representative learning and level-testing samples, not complete official Goethe or DTZ catalogues. Arabic and Ukrainian currently localize interface labels; full learning-content translations are not yet complete. See `docs/CONTENT_SOURCES.md`, `docs/GRAMMAR_CURRICULUM.md` and `docs/IMAGE_AUDIT.md`.
+
+## Run and test
+
 ```bash
 npm install
+npm run build:web
 npm start
-# http://localhost:4173
-```
-
-## Tests
-```bash
-npm test
+npm run test
 npm run test:3x
 npm run api:test
 ```
 
-See `docs/TEST_REPORT.md`, `docs/GRAMMAR_CURRICULUM.md`, `docs/CONTENT_SOURCES.md`, `docs/BUILD_AND_RELEASE.md` and `docs/GITHUB_SETUP.md`.
+## Android build
 
-This independent project is not affiliated with or endorsed by Goethe-Institut, telc or BAMF.
+Pushes to `main` run the Android debug APK workflow. The workflow bundles the app, creates the Capacitor Android project, builds `assembleDebug`, verifies package ID and APK v2 signature, then uploads `lernwerk-android-debug-apk`.
+
+Open [GitHub Actions](https://github.com/ycaliskn/LernWerk-DTZ/actions) to download the latest artifact. iOS jobs are deferred and do not run automatically for Android updates. They will only be enabled when explicitly requested and Apple signing details are configured.
+
+## Project structure
+
+- `app/` – PWA UI, learning content, illustrations, progress logic and tests.
+- `api-java/` – Java 21 domain rules and demo HTTP API.
+- `database/` – PostgreSQL schema draft.
+- `openapi/` – API contract draft.
+- `docs/` – architecture, source, image audit, test and release notes.
+
+This is an independent learning project, not affiliated with or endorsed by Goethe-Institut, BAMF or telc.
