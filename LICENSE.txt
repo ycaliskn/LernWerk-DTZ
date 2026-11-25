@@ -1,0 +1,5 @@
+Copyright (c) 2026 ycaliskn. All rights reserved.
+
+This repository is public for inspection. No license is granted to copy,
+modify, distribute, sublicense or sell the source code or bundled content
+without prior written permission from the copyright holder.

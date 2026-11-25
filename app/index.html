@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f6f7fb" />
+  <meta name="description" content="DTZ A1–B1 Almanca kelime, fiil ve gramer çalışma uygulaması." />
+  <link rel="manifest" href="./manifest.webmanifest" />
+  <link rel="icon" href="./assets/icon.svg" type="image/svg+xml" />
+  <link rel="apple-touch-icon" href="./assets/icon-180.png" />
+  <link rel="stylesheet" href="./style.css" />
+  <title>LernWerk – Deutsch A1–B1</title>
+</head>
+<body>
+  <div id="app" class="shell">
+    <header class="topbar">
+      <button class="brand-button" id="homeButton" aria-label="Ana sayfa">
+        <span class="brand-mark">L</span><span class="brand-copy"><strong>LernWerk</strong><small>Deutsch A1–B1</small></span>
+      </button>
+      <div class="top-actions">
+        <span id="levelPill" class="level-pill">A1</span>
+        <button id="settingsButton" class="icon-button" aria-label="Ayarlar">⚙</button>
+      </div>
+    </header>
+
+    <main id="main" class="main-content" tabindex="-1"></main>
+
+    <nav class="bottom-nav" aria-label="Alt menü">
+      <button data-nav="home" class="nav-item active"><span>⌂</span><small id="navHome">Ana sayfa</small></button>
+      <button data-nav="words" class="nav-item"><span>▤</span><small id="navWords">Kelime</small></button>
+      <button data-nav="verbs" class="nav-item"><span>↗</span><small id="navVerbs">Fiil</small></button>
+      <button data-nav="grammar" class="nav-item"><span>◇</span><small id="navGrammar">Gramer</small></button>
+      <button data-nav="mistakes" class="nav-item"><span>◎</span><small id="navMistakes">Hatalar</small></button>
+    </nav>
+    <div id="adSlot" class="ad-slot hidden" aria-label="Reklam alanı">
+      <span class="ad-label">REKLAM</span><span>Öğrenme akışını bölmeyen küçük reklam alanı</span><button id="hideAd" aria-label="Reklam alanını kapat">×</button>
+    </div>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </div>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

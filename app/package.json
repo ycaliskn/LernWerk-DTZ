@@ -1,0 +1,11 @@
+{
+  "name": "lernwerk-dtz-mobile",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 4173 -d .",
+    "test": "node --test tests/*.test.js",
+    "test:3x": "node --test tests/*.test.js && node --test tests/*.test.js && node --test tests/*.test.js"
+  }
+}

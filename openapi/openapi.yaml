@@ -1,0 +1,91 @@
+openapi: 3.1.0
+info:
+  title: LernWerk DTZ API
+  version: 0.1.0
+  description: API contract draft. Authentication and persistence adapters are not yet enabled in the demo server.
+servers:
+  - url: https://api.example.invalid/api/v1
+    description: Placeholder; replace before deployment.
+paths:
+  /health:
+    get:
+      security: []
+      responses:
+        '200':
+          description: Service health
+  /settings:
+    get:
+      summary: Get user language and level settings
+      responses:
+        '200': { description: Settings returned }
+    put:
+      summary: Update user language and level settings
+      responses:
+        '200': { description: Settings updated }
+  /content/words:
+    get:
+      summary: List vocabulary cards by level, topic and language
+      parameters:
+        - { name: level, in: query, schema: { type: string, enum: [A1, A2, B1] } }
+        - { name: language, in: query, schema: { type: string, default: tr } }
+        - { name: topic, in: query, schema: { type: string } }
+      responses:
+        '200': { description: Vocabulary items }
+  /content/verbs:
+    get:
+      summary: List verbs and conjugation tables
+      responses:
+        '200': { description: Verbs returned }
+  /content/grammar:
+    get:
+      summary: List grammar lessons and exercises
+      responses:
+        '200': { description: Grammar returned }
+  /study/resume:
+    get:
+      summary: Find the latest unfinished session
+      responses:
+        '200': { description: Saved session returned }
+  /study/sessions:
+    post:
+      summary: Create a new study session
+      responses:
+        '201': { description: Session created }
+  /study/answers:
+    post:
+      summary: Record an answer and update progress / mistake review
+      responses:
+        '200': { description: Answer recorded }
+  /mistakes:
+    get:
+      summary: Get active mistakes and next review due dates
+      responses:
+        '200': { description: Mistakes returned }
+  /progress:
+    get:
+      summary: Get learning statistics
+      responses:
+        '200': { description: Progress returned }
+  /subscription:
+    get:
+      summary: Get Pro subscription entitlement
+      responses:
+        '200': { description: Entitlement returned }
+  /subscription/verify:
+    post:
+      summary: Verify Apple / Google purchase with store server APIs
+      responses:
+        '200': { description: Purchase verified }
+  /app-config:
+    get:
+      summary: Get app feature flags and ad policy configuration
+      responses:
+        '200': { description: Configuration returned }
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+security:
+  - bearerAuth: []
