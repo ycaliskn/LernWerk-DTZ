@@ -84,3 +84,21 @@ export function reviewDelaySatisfied(record, now = Date.now()) {
   const minGap = correctCount === 1 ? 10 * 60 * 1000 : 24 * 60 * 60 * 1000;
   return now - previous.at >= minGap;
 }
+
+/** Mixes a small A1 review slice into an A2 vocabulary session (25% of total). */
+export function mixA1Review(a1Items, targetItems, enabled = true) {
+  if (!enabled || !targetItems.length) return [...targetItems];
+  const reviewCount = Math.min(a1Items.length, Math.ceil(targetItems.length / 3));
+  const reviewItems = [...a1Items].sort((a, b) => Number(Boolean(a.completed)) - Number(Boolean(b.completed))).slice(0, reviewCount);
+  return [...targetItems, ...reviewItems];
+}
+
+/** Stable per-level, per-module, per-subsection progress key. */
+export function sessionStorageKey(level, module, subsection = 'all') {
+  return `${level}:${module}:${subsection || 'all'}`;
+}
+
+/** Stable mistake archive bucket for independent module/topic review. */
+export function mistakeArchiveKey(module, subsection = 'all') {
+  return `${module}::${subsection || 'all'}`;
+}

@@ -1,33 +1,26 @@
-# Project status — 25 November 2026
+# LernWerk project status – v0.4
 
-## Prepared
-- Mobile-responsive, installable-web-app prototype with five learning areas.
-- Turkish-first settings with 17 language options; sample learning translations in Turkish and English.
-- Expanded A1 sample pack: 58 vocabulary cards, 25 verb cards and 20 grammar exercises. This is a curated test pack, not the full ~650-word Goethe A1 list.
-- Cumulative A1/A2/B1 access, local guest progress, session resume/restart and spaced mistake-review rules.
-- Java 21 learning-rule module and local demo HTTP API.
-- PostgreSQL schema draft, OpenAPI v1 contract, content-source register, security guidance and Capacitor 8 packaging configuration.
-- GitHub CI, Android and iOS Simulator build workflows, CODEOWNERS and Dependabot configuration.
-- Full 45-file source tree is present on public GitHub `main`.
+## Implemented in this revision
 
-## Verified on 25 November 2026
-- Node.js: 22 tests per run, 3 separate runs; 66/66 passed.
-- Java learning-rule test suite: 3 separate runs; all passed.
-- 5 JavaScript syntax checks and structural content audit passed.
-- GitHub Actions CI, Android debug APK build and iOS Simulator build succeeded for commit `fa835fefd46070860321c1b6fab8e8bca76d18ca`.
-- APK package ID `de.lernwerk.dtz`, APK v2 signature and SHA-256 checked; see `docs/TEST_REPORT.md`.
-- iOS Simulator app built for simulator architectures; not a device IPA.
+- 121 learning cards have distinct hand-authored SVG illustrations, including separate artwork for apartment, bedroom, kitchen and bathroom.
+- Fill-in-the-blank practice is a separate question mode with new sentences; the question screen intentionally has no illustration, learning-card title or pre-answer hint.
+- Per-module and per-subsection learning progress and resume keys.
+- Legacy session migration to subsection-specific progress keys.
+- Mistake archive split into vocabulary, verbs and grammar, with additional topic/subsection filters and targeted review.
+- Optional 25% A1 vocabulary review slice in A2 word sessions; also applied to combined word+verb sessions.
+- Native Android TTS plugin integration remains in place.
 
-## Not yet implemented / not yet verified
-- Full Goethe A1 Wortliste coverage and full A1 editorial review; A2/B1 learning packs.
-- Professional linguistic review and full translations for all 17 interface languages.
-- Licensed photographs/illustrations for every card.
-- Production Spring Boot service, account authentication/linking, remote sync and database deployment.
-- Encrypted native local storage.
-- Native AdMob SDK, publisher category blocks, GDPR consent platform and ad-unit configuration.
-- Apple/Google purchase verification and live Pro subscription.
-- Physical-device installation tests on Android/iPhone and browser E2E tests.
-- Signed iOS device IPA/TestFlight: requires Apple signing and App Store Connect secrets in GitHub repository settings. Do not share secrets in chat.
-- Main-branch protection is not configured.
+## Current content sample
 
-See `docs/GRAMMAR_CURRICULUM.md`, `docs/CONTENT_SOURCES.md`, `docs/TEST_REPORT.md`, `docs/GITHUB_SETUP.md` and `docs/BUILD_AND_RELEASE.md`.
+- A1: 58+ words in the original pack plus A1 expansion, 25 verbs and 20 grammar exercises.
+- A2/B1: representative sample content for level testing; not complete official catalogues.
+- Learning-card art is inline original SVG and works offline.
+
+## Not yet verified / not included
+
+- This revision still requires a fresh GitHub Actions Android build and APK artifact before distribution.
+- Physical Android installation and device-specific TTS playback have not been tested here.
+- Signed iOS device IPA/TestFlight is deferred until Apple credentials are configured by the account owner.
+- Production authentication, cloud sync, billing and live AdMob remain out of scope.
+
+See `docs/TEST_REPORT.md` for exact checks and limitations.
