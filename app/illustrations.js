@@ -17,29 +17,39 @@ speech:'<path d="M28 42q0-12 12-12h80q12 0 12 12v49q0 12-12 12H75l-25 18v-18H40q
 grammar:'<rect x="35" y="30" width="90" height="90" rx="9" fill="#fff" stroke="#86a0bd" stroke-width="4"/><path d="M51 53h58m-58 19h58m-58 19h38" stroke="#76a9c8" stroke-width="6"/><circle cx="112" cy="105" r="15" fill="#e8c56f"/>',
 sport:'<circle cx="80" cy="80" r="42" fill="#e9f0f5" stroke="#6e8ca5" stroke-width="5"/><path d="m80 38 14 20-8 23H64l-8-23Zm-16 43-22 15m44-15 22 15" fill="none" stroke="#6e8ca5" stroke-width="5"/>',
 pharmacy:'<rect x="33" y="34" width="94" height="88" rx="9" fill="#fff" stroke="#83aa9d" stroke-width="4"/><path d="M80 49v58M53 78h54" stroke="#67ae8e" stroke-width="12"/>',
+phone:'<rect x="52" y="22" width="56" height="104" rx="12" fill="#536b8b"/><rect x="59" y="33" width="42" height="75" rx="5" fill="#e8f5f7"/><circle cx="80" cy="117" r="4" fill="#fff"/>',
+bicycle:'<circle cx="43" cy="99" r="24" fill="none" stroke="#557c9e" stroke-width="6"/><circle cx="119" cy="99" r="24" fill="none" stroke="#557c9e" stroke-width="6"/><path d="m43 99 27-39 24 39H43l25-39h30l21 39" fill="none" stroke="#65a994" stroke-width="6"/>',
+clothing:'<path d="m55 32 25 12 25-12 28 23-18 22-14-10v54H59V67L45 77 27 55Z" fill="#7da8cf" stroke="#54779c" stroke-width="4"/>',
+hospital:'<rect x="35" y="28" width="90" height="98" rx="8" fill="#fff" stroke="#9bb1c7" stroke-width="4"/><path d="M80 45v38M61 64h38" stroke="#e16c70" stroke-width="9" stroke-linecap="round"/>',
+ticket:'<path d="M34 48h92v24q-16 8 0 18v24H34V90q16-8 0-18Z" fill="#f1c96c" stroke="#b28a3f" stroke-width="4"/><path d="M80 50v62" stroke="#fff" stroke-width="5" stroke-dasharray="6 6"/>',
 default:'<circle cx="80" cy="78" r="43" fill="#dceaf6"/><path d="M58 80h44m-22-22v44" stroke="#6d91b4" stroke-width="8"/>'
 };
 function keyFor(item){
  const t=(item.target||item.infinitive||item.title||'').toLowerCase(), v=item.visual||'', all=t+' '+(item.topic||'');
  if(/apfel|🍎/.test(all+v))return'apple';
+ if(/telefon|telefonnummer|☎️|🪪/.test(all+v))return'phone';
+ if(/fahrrad|🚲/.test(all+v))return'bicycle';
+ if(/kleidung|👕/.test(all+v))return'clothing';
+ if(/krankenhaus|🏥/.test(all+v))return'hospital';
+ if(/fahrkarte|ticket|🎫/.test(all+v))return'ticket';
  if(/wohnung|zimmer|küche|bad|fenster|wohnen|umziehen|🚪|🏠|🪟/.test(all+v))return'house';
  if(/arbeit|beruf|bewerbung|verantwortung|📄|💼|🛡️/.test(all+v))return'briefcase';
  if(/arzt|gesund|🩺/.test(all+v))return'doctor';
  if(/bus|verkehr|🚌/.test(all+v))return'bus';
  if(/voraussetzung|unterschied|📋|⚖️/.test(all+v))return'grammar';
  if(/buch|lesen|lernen|erfahrung|📚|📖|🧠/.test(all+v))return'book';
- if(/famil|mutter|vater|sohn|tochter|kind|teilnehmen|👨|👩|👦|👧|🧒|🧑‍🤝‍🧑/.test(all+v))return'family';
+ if(/famil|name|adresse|mutter|vater|sohn|tochter|kind|teilnehmen|👨|👩|👦|👧|🧒|🧑‍🤝‍🧑/.test(all+v))return'family';
  if(/einkauf|kaufen|🛒/.test(all+v))return'cart';
  if(/telefon|☎️/.test(all+v))return'phone';
  if(/zug|bahn|verspät|🚆/.test(all+v))return'train';
- if(/essen|trinken|milch|käse|tomat|🥛|🧀|🍅/.test(all+v))return'food';
- if(/termin|vereinbar|absagen|📅/.test(all+v))return'calendar';
+ if(/essen|trinken|milch|wasser|käse|tomat|kartoffel|pause|kaffee|🥛|💧|🧀|🍅|🥔|🥚|☕/.test(all+v))return'food';
+ if(/termin|vereinbar|absagen|montag|morgen|uhr|zeit|📅|📆|🕘|🌅/.test(all+v))return'calendar';
  if(/umziehen|📦/.test(all+v))return'house';
  if(/vermeiden|🚫/.test(all+v))return'question';
  if(/vorschlagen|💡/.test(all+v))return'speech';
  if(/wetter|regen|🌤️|🌧️/.test(all+v))return'weather';
  if(/schule|lehrer|kindergarten|🏫/.test(all+v))return'school';
- if(/sprech|frage|antwort|w-fragen|💬|❓/.test(all+v))return'speech';
+ if(/sprech|frage|antwort|w-fragen|kopf|hand|auge|💬|❓|🙂|✋|👁️/.test(all+v))return'speech';
  if(/sport|⚽/.test(all+v))return'sport';
  if(/apotheke|💊/.test(all+v))return'pharmacy';
  if(item.type==='grammar')return'grammar';
