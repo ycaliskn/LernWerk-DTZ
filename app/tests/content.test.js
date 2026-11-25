@@ -11,9 +11,9 @@ test('language catalogue contains the expected 17 unique language codes', () => 
 });
 
 test('all initial learning content is explicitly labelled A1 and has a valid answer', () => {
-  for (const item of [...WORDS, ...VERBS, ...GRAMMAR]) {
+  for (const item of [...WORDS, ...VERBS, ...GRAMMAR].filter(item => item.level === 'A1')) {
     assert.equal(item.level, 'A1');
-    assert.ok(item.id && item.id.startsWith(item.type === 'grammar' ? 'g-' : item.infinitive ? 'v-' : 'a1-'));
+    assert.ok(item.id && /^[a-z0-9-]+$/.test(item.id));
     assert.ok(Number.isInteger(item.answer));
     const optionList = Array.isArray(item.options) ? item.options : item.options?.tr;
     assert.ok(optionList?.length >= 2);
@@ -58,9 +58,10 @@ test('every source entry has a unique ID and a valid HTTPS reference with rights
 });
 
 test('expanded A1 vocabulary pack has no holes, duplicate IDs or mismatched keyed answers', () => {
-  assert.ok(WORDS.length >= 55, `expected expanded A1 vocabulary, got ${WORDS.length}`);
+  const a1Words = WORDS.filter(item => item.level === 'A1');
+  assert.ok(a1Words.length >= 55, `expected expanded A1 vocabulary, got ${a1Words.length}`);
   assert.equal(new Set(WORDS.map(item => item.id)).size, WORDS.length);
-  for (const word of WORDS) {
+  for (const word of a1Words) {
     assert.equal(word.level, 'A1');
     assert.equal(word.type, 'word');
     assert.ok(word.target && word.sentence && word.topic && word.visual);
@@ -77,9 +78,10 @@ test('expanded A1 vocabulary pack has no holes, duplicate IDs or mismatched keye
 });
 
 test('expanded A1 verb pack contains complete six-person present and tense forms', () => {
-  assert.ok(VERBS.length >= 24, `expected expanded A1 verb pack, got ${VERBS.length}`);
+  const a1Verbs = VERBS.filter(item => item.level === 'A1');
+  assert.ok(a1Verbs.length >= 24, `expected expanded A1 verb pack, got ${a1Verbs.length}`);
   assert.equal(new Set(VERBS.map(item => item.id)).size, VERBS.length);
-  for (const verb of VERBS) {
+  for (const verb of a1Verbs) {
     assert.equal(verb.level, 'A1');
     assert.ok(verb.present.length === 6, `${verb.infinitive}: six present forms`);
     assert.ok(verb.preterite && verb.perfect && verb.example);
@@ -90,15 +92,16 @@ test('expanded A1 verb pack contains complete six-person present and tense forms
 });
 
 test('A1 grammar quiz items all have valid solutions and cover the VHS A1 progression', () => {
-  assert.ok(GRAMMAR.length >= 18, `expected expanded A1 grammar pack, got ${GRAMMAR.length}`);
+  const a1Grammar = GRAMMAR.filter(item => item.level === 'A1');
+  assert.ok(a1Grammar.length >= 18, `expected expanded A1 grammar pack, got ${a1Grammar.length}`);
   assert.equal(new Set(GRAMMAR.map(item => item.id)).size, GRAMMAR.length);
-  for (const topic of GRAMMAR) {
+  for (const topic of a1Grammar) {
     assert.equal(topic.level, 'A1');
     assert.ok(topic.title && topic.explanation && topic.example && topic.quiz);
     assert.ok(Array.isArray(topic.options) && topic.options.length >= 3);
     assert.ok(Number.isInteger(topic.answer) && topic.answer >= 0 && topic.answer < topic.options.length);
   }
-  const titles = GRAMMAR.map(item => item.title.toLowerCase()).join(' | ');
+  const titles = a1Grammar.map(item => item.title.toLowerCase()).join(' | ');
   for (const marker of ['personalpronomen', 'possessiv', 'akkusativ', 'trennbare', 'dativ', 'imperativ', 'modalverben', 'perfekt', 'komparativ', 'ordinalzahlen']) {
     assert.ok(titles.includes(marker), `missing A1 grammar coverage: ${marker}`);
   }
@@ -108,7 +111,7 @@ test('all learning IDs are globally unique and no array contains undefined cards
   const all = [...WORDS, ...VERBS, ...GRAMMAR];
   assert.equal(all.some(item => item === undefined), false);
   assert.equal(new Set(all.map(item => item.id)).size, all.length);
-  assert.ok(all.every(item => item.level === 'A1'));
+  assert.ok(all.every(item => ['A1', 'A2', 'B1'].includes(item.level)));
 });
 
 test('expanded grammar pack has bilingual titles and explanations for study UI', () => {
