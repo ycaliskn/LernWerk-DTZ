@@ -1,0 +1,8 @@
+{
+  "appId": "de.lernwerk.dtz",
+  "appName": "LernWerk Deutsch",
+  "webDir": "app",
+  "server": {
+    "androidScheme": "https"
+  }
+}
