@@ -1,0 +1,38 @@
+import org.gradle.api.artifacts.repositories.MavenArtifactRepository
+
+/**
+ * Avoid Maven Central rate limits in ephemeral CI runners by replacing the
+ * public repo.maven.apache.org endpoint with Google's public Maven Central
+ * mirrors. Google documents these GCS-hosted mirrors as compatible with
+ * Gradle Maven repositories.
+ */
+def replaceCentralWithGoogleMirror = { repositories ->
+    def centralRepositories = repositories.findAll { repository ->
+        repository instanceof MavenArtifactRepository &&
+            repository.url.toString().contains('repo.maven.apache.org')
+    }
+    centralRepositories.each { repository -> repositories.remove(repository) }
+
+    repositories.maven {
+        name = 'GoogleMavenCentralMirrorEU'
+        url = uri('https://maven-central-eu.storage-download.googleapis.com/maven2/')
+    }
+    repositories.maven {
+        name = 'GoogleMavenCentralMirrorGlobal'
+        url = uri('https://maven-central.storage-download.googleapis.com/maven2/')
+    }
+}
+
+gradle.settingsEvaluated { settings ->
+    replaceCentralWithGoogleMirror(settings.pluginManagement.repositories)
+    try {
+        replaceCentralWithGoogleMirror(settings.dependencyResolutionManagement.repositories)
+    } catch (MissingPropertyException ignored) {
+        // Older generated Capacitor settings may not declare central repositories here.
+    }
+}
+
+gradle.beforeProject { project ->
+    replaceCentralWithGoogleMirror(project.repositories)
+    replaceCentralWithGoogleMirror(project.buildscript.repositories)
+}

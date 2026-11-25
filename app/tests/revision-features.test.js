@@ -99,6 +99,7 @@ test('native TTS plugin is installed, bundled and used instead of WebView-only s
 test('native mobile workflow bundles the JavaScript app before Capacitor sync', () => {
   const workflow = readFileSync(new URL('../../.github/workflows/mobile-build.yml', import.meta.url), 'utf8');
   assert.ok((workflow.match(/npm run build:web/g) || []).length >= 2);
+  assert.match(workflow, /-I \.\.\/\.github\/gradle-mirror\.init\.gradle assembleDebug/);
 });
 
 test('Android push workflow does not run iOS jobs until explicitly dispatched', () => {

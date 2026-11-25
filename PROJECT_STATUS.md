@@ -20,7 +20,7 @@
 
 ## Build / release status
 
-- Android debug APK is built by the GitHub Actions workflow on pushes to `main`; the workflow verifies the application ID and APK v2 signature before uploading the artifact.
+- Android debug APK is built by the GitHub Actions workflow on pushes to `main`; the workflow verifies the application ID and APK v2 signature before uploading the artifact. Gradle replaces Maven Central endpoints with Google EU/global mirrors to mitigate HTTP 429 rate limits.
 - iOS Simulator and signed iOS IPA jobs are deliberately disabled for automatic Android pushes. They can be run later by an explicit workflow dispatch after the owner requests iOS work and configures Apple credentials.
 - Physical Android installation and device-specific German TTS playback still require a real Android phone.
 - Production authentication, cloud sync, billing and live AdMob remain out of scope.
